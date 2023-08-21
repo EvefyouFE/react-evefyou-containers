@@ -30,6 +30,7 @@ const entries = {
   'TableContainer': pathResolve('containers/TableContainer'),
   'KeepAliveContainer': pathResolve('containers/KeepAliveContainer'),
 }
+const otherEntryFile = Object.keys(entries).filter(e => e !== 'index')
 
 export default defineConfig({
   plugins: [
@@ -46,8 +47,7 @@ export default defineConfig({
       // rollupTypes: true,
       outDir: ['dist/cjs', 'dist/es'],
       beforeWriteFile: (filePath, content) => {
-        const entryDFile = Object.keys(entries)
-          .filter(e => e !== 'index')
+        const entryDFile = otherEntryFile
           .map(e => e.concat('.d.ts'))
           .find(e => filePath.includes(e))
         return entryDFile ? false : { filePath, content }
@@ -72,7 +72,11 @@ export default defineConfig({
             // console.log('chunkInfo', chunkInfo)
             return chunkInfo.name === 'index' ? `[format]/index.js` : `[format]/[name]/index.js`
           },
-          chunkFileNames: '[format]/_common/[name]/[name].js',
+          chunkFileNames: (chunkInfo) => otherEntryFile.reduce(
+            (acc, cur) => !chunkInfo.isEntry && chunkInfo.moduleIds.findIndex(s => s.includes(cur)) !== -1
+              ? `[format]/${cur}/other.js` : acc,
+            '[format]/_common/[name]/[name].js'
+          ),
           assetFileNames: '[ext]/[name].[ext]',
         },
         external: regexOfPackages
