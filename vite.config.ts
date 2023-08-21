@@ -24,10 +24,11 @@ const regexOfPackages = externalPackages
   .map(packageName => new RegExp(`^${packageName}(\\/.*)?`));
 
 const entries = {
-  'index': pathResolve('components/index.ts'),
-  'BasicContainer': pathResolve('components/BasicContainer'),
-  'TabContainer': pathResolve('components/TabContainer'),
-  'TableContainer': pathResolve('components/TableContainer'),
+  'index': pathResolve('containers/index.ts'),
+  'BasicContainer': pathResolve('containers/BasicContainer'),
+  'TabContainer': pathResolve('containers/TabContainer'),
+  'TableContainer': pathResolve('containers/TableContainer'),
+  'KeepAliveContainer': pathResolve('containers/KeepAliveContainer'),
 }
 
 export default defineConfig({
@@ -35,7 +36,7 @@ export default defineConfig({
     react(),
     WindiCSS({
       scan: {
-        dirs: ['./components'],
+        dirs: ['./containers'],
         fileExtensions: ['tsx', 'ts']
       }
     }),
@@ -85,7 +86,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         modifyVars: {
-          hack: `true; @import (reference) "${path.resolve('components/_common/styles/variables/index.less')}";`,
+          hack: `true; @import (reference) "${path.resolve('containers/_common/styles/variables/index.less')}";`,
           'primary-color': '#0960bd',
           'text-color': '#c9d1d9',
           'text-color-base': '#000000d9'

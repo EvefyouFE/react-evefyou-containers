@@ -28,15 +28,15 @@
     "baseUrl": ".",
     "paths": {
       "@common/*": [
-        "components/_common/*"
+        "containers/_common/*"
       ],
       "@/*": [
-        "components/*"
+        "containers/*"
       ],
     }
   },
   "include": [
-    "components"
+    "containers"
   ],
   "references": [
     {
