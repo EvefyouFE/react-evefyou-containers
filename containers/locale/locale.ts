@@ -1,11 +1,11 @@
 /*
- * @Author: EvefyouFE
- * @Date: 2023-08-16 14:28:09
- * @FilePath: \react-evefyou-containers\components\_common\locales\index.ts
- * @Description: 
- * Everyone is coming to the world i live in, as i am going to the world lives for you. 人人皆往我世界，我为世界中人人。
- * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
- */
+* @Author: EvefyouFE
+* @Date: 2023-08-16 14:28:09
+* @FilePath: \react-evefyou-containers\containers\locale\locale.ts
+* @Description: 
+* Everyone is coming to the world i live in, as i am going to the world lives for you. 人人皆往我世界，我为世界中人人。
+* Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
+*/
 import React from 'react';
 import enUS from './en-us';
 import { FormattedMessage, MessageDescriptor, PrimitiveType, useIntl } from 'react-intl';
@@ -39,4 +39,5 @@ export function formatMessage({ id, values }: Props): React.ReactNode {
 export function formatById(id: Id, values?: Values) {
   return formatMessage({ id, values })
 }
+
 

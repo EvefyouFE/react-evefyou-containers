@@ -21,7 +21,7 @@ export * from './KeepAliveContainer/props'
 export * from './TableContainer/typing'
 export * from './KeepAliveContainer/context'
 
-export * from './types'
+export * from './types/global'
 
 export * from './_common/hooks/useTabs'
 export * from './_common/config/tabContainerSetting'

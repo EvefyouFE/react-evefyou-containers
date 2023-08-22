@@ -25,6 +25,8 @@ const regexOfPackages = externalPackages
 
 const entries = {
   'index': pathResolve('containers/index.ts'),
+  'zh_CN': pathResolve('containers/locale/zh-cn'),
+  'en_US': pathResolve('containers/locale/en-us'),
   'BasicContainer': pathResolve('containers/BasicContainer'),
   'TabContainer': pathResolve('containers/TabContainer'),
   'TableContainer': pathResolve('containers/TableContainer'),
@@ -45,7 +47,7 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       // rollupTypes: true,
-      outDir: ['dist/cjs', 'dist/es'],
+      outDir: ['types'],
       beforeWriteFile: (filePath, content) => {
         const entryDFile = otherEntryFile
           .map(e => e.concat('.d.ts'))
@@ -59,19 +61,20 @@ export default defineConfig({
         minify: true,
         reportCompressedSize: true,
         cssCodeSplit: true,
+        outDir: '.',
       },
       entry: entries,
-      fileName: (format, entryName) => entryName === 'index'
-        ? `${format}/index.${format === 'cjs' ? format : 'js'}`
-        : `${format}/${entryName}/index.${format === 'cjs' ? format : 'js'}`,
+      fileName: (format, entryName) => {
+        return entryName === 'index'
+          ? `${format}/index.js`
+          : entryName.includes('_')
+            ? `${format}/locale/${entryName}.js`
+            : `${format}/[name]/index.js`
+      },
       name: 'react-evefyou-containers',
       formats: ["es", "cjs"],
       rollupOptions: {
         output: {
-          entryFileNames: (chunkInfo) => {
-            // console.log('chunkInfo', chunkInfo)
-            return chunkInfo.name === 'index' ? `[format]/index.js` : `[format]/[name]/index.js`
-          },
           chunkFileNames: (chunkInfo) => otherEntryFile.reduce(
             (acc, cur) => !chunkInfo.isEntry && chunkInfo.moduleIds.findIndex(s => s.includes(cur)) !== -1
               ? `[format]/${cur}/other.js` : acc,

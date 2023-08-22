@@ -1,50 +1,65 @@
 {
   "name": "react-evefyou-containers",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "",
   "type": "module",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/es/index.js",
-  "types": "./dist/es/index.d.ts",
+  "main": "./cjs/index.js",
+  "module": "./es/index.js",
+  "types": "./types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/es/index.js",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/index.js",
+      "require": "./cjs/index.js",
+      "types": "./types/index.d.ts"
     },
     "./windi.css": {
-      "import": "./dist/css/windi.css",
-      "require": "./dist/css/windi.css"
+      "import": "./css/windi.css",
+      "require": "./css/windi.css"
+    },
+    "./locale/zh_CN": {
+      "import": "./es/locale/zh_CN.js",
+      "require": "./cjs/locale/zh_CN.js",
+      "types": "./types/locale/zh-cn/index.d.ts"
+    },
+    "./locale/en_US": {
+      "import": "./es/locale/en_US.js",
+      "require": "./cjs/locale/en_US.js",
+      "types": "./types/locale/en-us/index.d.ts"
     },
     "./BasicContainer": {
-      "import": "./dist/es/BasicContainer/index.js",
-      "require": "./dist/cjs/BasicContainer/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/BasicContainer/index.js",
+      "require": "./cjs/BasicContainer/index.js",
+      "types": "./types/index.d.ts"
     },
     "./TabContainer": {
-      "import": "./dist/es/TabContainer/index.js",
-      "require": "./dist/cjs/TabContainer/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/TabContainer/index.js",
+      "require": "./cjs/TabContainer/index.js",
+      "types": "./types/index.d.ts"
     },
     "./TableContainer": {
-      "import": "./dist/es/TableContainer/index.js",
-      "require": "./dist/cjs/TableContainer/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/TableContainer/index.js",
+      "require": "./cjs/TableContainer/index.js",
+      "types": "./types/index.d.ts"
     },
     "./KeepAliveContainer": {
-      "import": "./dist/es/KeepAliveContainer/index.js",
-      "require": "./dist/cjs/KeepAliveContainer/index.js",
-      "types": "./dist/es/index.d.ts"
+      "import": "./es/KeepAliveContainer/index.js",
+      "require": "./cjs/KeepAliveContainer/index.js",
+      "types": "./types/index.d.ts"
     }
   },
   "files": [
-    "dist"
+    "cjs",
+    "es",
+    "css",
+    "types"
   ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "build:tsc": "tsc",
     "clean": "rimraf node_modules",
+    "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
+    "clean:build": "rimraf es && rimraf cjs && rimraf css && rimraf dist && rimraf types",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

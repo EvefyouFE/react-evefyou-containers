@@ -1,7 +1,7 @@
 /*
  * @Author: EvefyouFE
  * @Date: 2023-08-20 23:36:49
- * @FilePath: \react-evefyou-containers\components\TabContainer\index.tsx
+ * @FilePath: \react-evefyou-containers\containers\TabContainer\index.tsx
  * @Description: 
  * Everyone is coming to the world i live in, as i am going to the world lives for you. 人人皆往我世界，我为世界中人人。
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
@@ -32,9 +32,9 @@ import {
 import { useTabs } from '@common/hooks/useTabs';
 import { useTabItemsState } from './hooks/useTabItemsState';
 import { TabContainerProps } from "./props";
-import { TabBarMoreItem } from "../types";
 import { CommonContainerProps } from "@/BasicContainer/props";
 import { DEFAULT_TAB_CONTAINER_SETTING } from "@common/config/tabContainerSetting";
+import { TabBarMoreItem } from "@/types/global";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export function translate2MenuItems(tabsMenuList?: TabBarMoreItem[]) {
@@ -58,8 +58,8 @@ ChildrenWrapper.displayName = 'ChildrenWrapper';
 
 export const TabContainer: FC<TabContainerProps> = ({
   children,
-  indexPath = DEFAULT_TAB_CONTAINER_SETTING.indexRedirectPath,
-  tabBarMoreItems = DEFAULT_TAB_CONTAINER_SETTING.tabsMenuList,
+  indexPath = DEFAULT_TAB_CONTAINER_SETTING.indexPath,
+  tabBarMoreItems = DEFAULT_TAB_CONTAINER_SETTING.tabBarMoreItems,
   footer,
   tabBarHeight
 }) => {
