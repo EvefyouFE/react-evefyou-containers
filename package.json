@@ -1,57 +1,53 @@
 {
   "name": "react-evefyou-containers",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
   "module": "./es/index.js",
-  "types": "./types/index.d.ts",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
       "import": "./es/index.js",
       "require": "./cjs/index.js",
-      "types": "./types/index.d.ts"
-    },
-    "./windi.css": {
-      "import": "./css/windi.css",
-      "require": "./css/windi.css"
+      "types": "./index.d.ts"
     },
     "./locale/zh_CN": {
-      "import": "./es/locale/zh_CN.js",
-      "require": "./cjs/locale/zh_CN.js",
-      "types": "./types/locale/zh-cn/index.d.ts"
+      "import": "./es/locale/zh_CN/index.js",
+      "require": "./cjs/locale/zh_CN/index.js",
+      "types": "./index.d.ts"
     },
     "./locale/en_US": {
-      "import": "./es/locale/en_US.js",
-      "require": "./cjs/locale/en_US.js",
-      "types": "./types/locale/en-us/index.d.ts"
+      "import": "./es/locale/en_US/index.js",
+      "require": "./cjs/locale/en_US/index.js",
+      "types": "./index.d.ts"
     },
     "./BasicContainer": {
       "import": "./es/BasicContainer/index.js",
       "require": "./cjs/BasicContainer/index.js",
-      "types": "./types/index.d.ts"
+      "types": "./index.d.ts"
     },
     "./TabContainer": {
       "import": "./es/TabContainer/index.js",
       "require": "./cjs/TabContainer/index.js",
-      "types": "./types/index.d.ts"
+      "types": "./index.d.ts"
     },
     "./TableContainer": {
       "import": "./es/TableContainer/index.js",
       "require": "./cjs/TableContainer/index.js",
-      "types": "./types/index.d.ts"
+      "types": "./index.d.ts"
     },
     "./KeepAliveContainer": {
       "import": "./es/KeepAliveContainer/index.js",
       "require": "./cjs/KeepAliveContainer/index.js",
-      "types": "./types/index.d.ts"
+      "types": "./index.d.ts"
     }
   },
   "files": [
     "cjs",
     "es",
     "css",
-    "types"
+    "index.d.ts"
   ],
   "scripts": {
     "dev": "vite",
@@ -85,18 +81,16 @@
     "@dnd-kit/modifiers": ">=6.0.1",
     "@dnd-kit/sortable": ">=7.0.2",
     "@dnd-kit/utilities": ">=3.2.1",
-    "@iconify/react": ">=4.1.1",
     "ahooks": ">=3.7.6",
     "antd": ">=5.6.3",
     "classnames": ">=2.3.2",
     "@emotion/css": ">=11.11.0",
-    "moment": ">=2.29.4",
     "ramda": ">=0.29.0",
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
     "react-draggable": ">=4.4.5",
     "react-evefyou-hooks": ">=1.0.7",
-    "react-evefyou-components": ">=1.0.11",
+    "react-evefyou-components": ">=1.0.17",
     "react-router": ">=6.10.0",
     "react-router-dom": ">=6.10.0",
     "react-intl": ">=6.4.4",

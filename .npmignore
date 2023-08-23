@@ -6,6 +6,7 @@ coverage/
 build/
 src/
 docs/
+manifest.json
 
 # 排除特定类型的文件
 *.log
