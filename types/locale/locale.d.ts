@@ -9,10 +9,10 @@ interface Props extends MessageDescriptor {
     values?: Values;
 }
 type FormatMessageProps = (descriptor: Props, values?: Values) => string;
-export declare const useLocale: () => {
+export declare const useContainersLocale: () => {
     formatMessage: FormatMessageProps;
     formatById: (id: Id, values?: Values) => string;
 };
-export declare function formatMessage({ id, values }: Props): React.ReactNode;
-export declare function formatById(id: Id, values?: Values): React.ReactNode;
+export declare function formatContainersMessage({ id, values }: Props): React.ReactNode;
+export declare function formatContainersById(id: Id, values?: Values): React.ReactNode;
 export {};

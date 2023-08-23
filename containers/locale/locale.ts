@@ -1,7 +1,7 @@
 /*
 * @Author: EvefyouFE
 * @Date: 2023-08-16 14:28:09
-* @FilePath: \react-evefyou-containers\containers\locale\locale.ts
+ * @FilePath: \react-evefyou-containers\containers\locale\locale.ts
 * @Description: 
 * Everyone is coming to the world i live in, as i am going to the world lives for you. 人人皆往我世界，我为世界中人人。
 * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
@@ -19,7 +19,7 @@ interface Props extends MessageDescriptor {
 }
 type FormatMessageProps = (descriptor: Props, values?: Values) => string;
 
-export const useLocale = () => {
+export const useContainersLocale = () => {
   const { formatMessage: _formatMessage } = useIntl();
   const formatMessage: FormatMessageProps = _formatMessage;
   const formatById = (id: Id, values?: Values) => formatMessage({ id }, values);
@@ -28,7 +28,7 @@ export const useLocale = () => {
     formatById
   };
 };
-export function formatMessage({ id, values }: Props): React.ReactNode {
+export function formatContainersMessage({ id, values }: Props): React.ReactNode {
   return React.createElement(FormattedMessage, {
     id,
     values,
@@ -36,8 +36,8 @@ export function formatMessage({ id, values }: Props): React.ReactNode {
   })
 }
 
-export function formatById(id: Id, values?: Values) {
-  return formatMessage({ id, values })
+export function formatContainersById(id: Id, values?: Values) {
+  return formatContainersMessage({ id, values })
 }
 
 
