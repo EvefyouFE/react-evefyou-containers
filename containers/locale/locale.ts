@@ -10,25 +10,25 @@ import React from 'react';
 import enUS from './en_US';
 import { FormattedMessage, MessageDescriptor, PrimitiveType, useIntl } from 'react-intl';
 
-export type Id = keyof typeof enUS;
-type FormatXMLElementFn<T, R = string | T | (string | T)[]> = (parts: Array<string | T>) => R;
-export type Values = Record<string, React.ReactNode | PrimitiveType | FormatXMLElementFn<React.ReactNode, React.ReactNode>>;
-interface Props extends MessageDescriptor {
-  id: Id;
-  values?: Values;
+type ContainersId = keyof typeof enUS;
+type ContainersFormatXMLElementFn<T, R = string | T | (string | T)[]> = (parts: Array<string | T>) => R;
+type ContainersValues = Record<string, React.ReactNode | PrimitiveType | ContainersFormatXMLElementFn<React.ReactNode, React.ReactNode>>;
+interface ContainersProps extends MessageDescriptor {
+  id: ContainersId;
+  values?: ContainersValues;
 }
-type FormatMessageProps = (descriptor: Props, values?: Values) => string;
+type FormatMessageProps = (descriptor: ContainersProps, values?: ContainersValues) => string;
 
 export const useContainersLocale = () => {
   const { formatMessage: _formatMessage } = useIntl();
   const formatMessage: FormatMessageProps = _formatMessage;
-  const formatById = (id: Id, values?: Values) => formatMessage({ id }, values);
+  const formatById = (id: ContainersId, values?: ContainersValues) => formatMessage({ id }, values);
   return {
     formatMessage,
     formatById
   };
 };
-export function formatContainersMessage({ id, values }: Props): React.ReactNode {
+export function formatContainersMessage({ id, values }: ContainersProps): React.ReactNode {
   return React.createElement(FormattedMessage, {
     id,
     values,
@@ -36,7 +36,7 @@ export function formatContainersMessage({ id, values }: Props): React.ReactNode 
   })
 }
 
-export function formatContainersById(id: Id, values?: Values) {
+export function formatContainersById(id: ContainersId, values?: ContainersValues) {
   return formatContainersMessage({ id, values })
 }
 

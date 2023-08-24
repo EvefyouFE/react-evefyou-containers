@@ -37,6 +37,17 @@ export declare type CommonContainerProps = PropsWithChildren & {
     footer: React.ReactNode;
 };
 
+declare type ContainersFormatXMLElementFn<T, R = string | T | (string | T)[]> = (parts: Array<string | T>) => R;
+
+declare type ContainersId = keyof typeof _default;
+
+declare interface ContainersProps extends MessageDescriptor {
+    id: ContainersId;
+    values?: ContainersValues;
+}
+
+declare type ContainersValues = Record<string, React_2.ReactNode | PrimitiveType | ContainersFormatXMLElementFn<React_2.ReactNode, React_2.ReactNode>>;
+
 declare const _default: {
     'container.page.menu.reload': string;
     'container.page.menu.close': string;
@@ -48,15 +59,11 @@ declare const _default: {
 
 export declare const DEFAULT_TAB_CONTAINER_SETTING: TabContainerSetting;
 
-export declare function formatContainersById(id: Id, values?: Values): React_2.ReactNode;
+export declare function formatContainersById(id: ContainersId, values?: ContainersValues): React_2.ReactNode;
 
-export declare function formatContainersMessage({ id, values }: Props): React_2.ReactNode;
+export declare function formatContainersMessage({ id, values }: ContainersProps): React_2.ReactNode;
 
-declare type FormatMessageProps = (descriptor: Props, values?: Values) => string;
-
-declare type FormatXMLElementFn<T, R = string | T | (string | T)[]> = (parts: Array<string | T>) => R;
-
-export declare type Id = keyof typeof _default;
+declare type FormatMessageProps = (descriptor: ContainersProps, values?: ContainersValues) => string;
 
 export declare interface KeepAliveComponentProps {
     active: boolean;
@@ -80,11 +87,6 @@ export declare interface KeepAliveProps {
     maxLen?: number;
     children: Children;
     active?: boolean;
-}
-
-declare interface Props extends MessageDescriptor {
-    id: Id;
-    values?: Values;
 }
 
 export declare interface TabBarMoreItem {
@@ -134,7 +136,7 @@ export declare const useBasicContainerContext: () => BasicContainerContextValue;
 
 export declare const useContainersLocale: () => {
     formatMessage: FormatMessageProps;
-    formatById: (id: Id, values?: Values) => string;
+    formatById: (id: ContainersId, values?: ContainersValues) => string;
 };
 
 export declare interface UseTableLayoutHooksMethods {
@@ -151,7 +153,5 @@ export declare type UseTableLayoutReturnType = UseTableLayoutMethods;
 export declare function useTabs(): {
     getTabItem: (key: string, locale: string, title?: string, children?: React_2.ReactNode) => TabItem;
 };
-
-export declare type Values = Record<string, React_2.ReactNode | PrimitiveType | FormatXMLElementFn<React_2.ReactNode, React_2.ReactNode>>;
 
 export { }

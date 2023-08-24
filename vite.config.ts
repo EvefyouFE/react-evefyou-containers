@@ -88,7 +88,7 @@ export default defineConfig({
           manualChunks: (id) => {
             let en = components.find(e => id.includes(e))
             en ??= locales.find(l => id.includes(l.split('_')[0]))
-            // console.log('manualChunks', en, id)
+            console.log('manualChunks', en, id)
             return en
           },
           chunkFileNames: () => {
