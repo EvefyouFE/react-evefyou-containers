@@ -16,7 +16,7 @@ import cssnanoPlugin from "cssnano";
 import postcssPresetEnv from 'postcss-preset-env';
 import WindiCSS from 'vite-plugin-windicss';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
-// import { identity, join, pipe, split, useWith } from "ramda";
+import fs from 'fs';
 
 const pathResolve = (v: string) => path.resolve(__dirname, v)
 
@@ -25,7 +25,9 @@ const regexOfPackages = externalPackages
   .map(packageName => new RegExp(`^${packageName}(\\/.*)?`));
 
 const entries = {
-  'index': pathResolve('containers/index.ts')
+  'index': pathResolve('containers/index.ts'),
+  'locale/en_US': pathResolve('containers/locale/en_US.ts'),
+  'locale/zh_CN': pathResolve('containers/locale/zh_CN.ts'),
 }
 
 const locales = Object.keys(pkg.exports)
@@ -49,6 +51,21 @@ export default defineConfig({
     tsconfigPaths(),
     dts({
       rollupTypes: true,
+      afterBuild: () => {
+        const directoryPath = '.';
+        const regexToDelete = /_\w+\.d\.ts$/;
+        fs.readdirSync(directoryPath).forEach((file) => {
+          const filePath = path.join(directoryPath, file);
+          if (regexToDelete.test(file)) {
+            try {
+              fs.unlinkSync(filePath);
+              console.log(`Deleted file: ${filePath}`);
+            } catch (err) {
+              console.error(`Error deleting file: ${err}`);
+            }
+          }
+        });
+      }
     }),
     libInjectCss({
       build: {
@@ -71,11 +88,11 @@ export default defineConfig({
           manualChunks: (id) => {
             let en = components.find(e => id.includes(e))
             en ??= locales.find(l => id.includes(l.split('_')[0]))
-            console.log('manualChunks', en, id)
+            // console.log('manualChunks', en, id)
             return en
           },
-          chunkFileNames: (chunkInfo) => {
-            console.log('chunkInfo', chunkInfo.name)
+          chunkFileNames: () => {
+            // console.log('chunkInfo', chunkInfo.name)
             return '[format]/[name]/index.js'
           },
           assetFileNames: '[ext]/[name].[ext]',

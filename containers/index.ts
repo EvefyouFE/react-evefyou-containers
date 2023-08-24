@@ -26,5 +26,4 @@ export * from './types/global'
 export * from './_common/hooks/useTabs'
 export * from './_common/config/tabContainerSetting'
 
-export { default as enUS } from '@/locale/en-us'
-export { default as zhCN } from '@/locale/zh-cn'
+export * from './locale/locale'

@@ -8,6 +8,8 @@ import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { JSXElementConstructor } from 'react';
 import { KeyItem } from 'react-evefyou-hooks';
 import { MemoExoticComponent } from 'react';
+import { MessageDescriptor } from 'react-intl';
+import { PrimitiveType } from 'react-intl';
 import { PropsWithChildren } from 'react';
 import { default as React_2 } from 'react';
 import { ReactElement } from 'react';
@@ -35,9 +37,7 @@ export declare type CommonContainerProps = PropsWithChildren & {
     footer: React.ReactNode;
 };
 
-export declare const DEFAULT_TAB_CONTAINER_SETTING: TabContainerSetting;
-
-export declare const enUS: {
+declare const _default: {
     'container.page.menu.reload': string;
     'container.page.menu.close': string;
     'container.page.menu.close.left': string;
@@ -45,6 +45,18 @@ export declare const enUS: {
     'container.page.menu.close.other': string;
     'container.page.menu.close.all': string;
 };
+
+export declare const DEFAULT_TAB_CONTAINER_SETTING: TabContainerSetting;
+
+export declare function formatContainersById(id: Id, values?: Values): React_2.ReactNode;
+
+export declare function formatContainersMessage({ id, values }: Props): React_2.ReactNode;
+
+declare type FormatMessageProps = (descriptor: Props, values?: Values) => string;
+
+declare type FormatXMLElementFn<T, R = string | T | (string | T)[]> = (parts: Array<string | T>) => R;
+
+export declare type Id = keyof typeof _default;
 
 export declare interface KeepAliveComponentProps {
     active: boolean;
@@ -68,6 +80,11 @@ export declare interface KeepAliveProps {
     maxLen?: number;
     children: Children;
     active?: boolean;
+}
+
+declare interface Props extends MessageDescriptor {
+    id: Id;
+    values?: Values;
 }
 
 export declare interface TabBarMoreItem {
@@ -115,6 +132,11 @@ export declare function translate2MenuItems(tabsMenuList?: TabBarMoreItem[]): {
 
 export declare const useBasicContainerContext: () => BasicContainerContextValue;
 
+export declare const useContainersLocale: () => {
+    formatMessage: FormatMessageProps;
+    formatById: (id: Id, values?: Values) => string;
+};
+
 export declare interface UseTableLayoutHooksMethods {
     instance: TableContainerInstance;
     tableInstance: Partial<BasicTableInstance>;
@@ -130,13 +152,6 @@ export declare function useTabs(): {
     getTabItem: (key: string, locale: string, title?: string, children?: React_2.ReactNode) => TabItem;
 };
 
-export declare const zhCN: {
-    'container.page.menu.reload': string;
-    'container.page.menu.close': string;
-    'container.page.menu.close.left': string;
-    'container.page.menu.close.right': string;
-    'container.page.menu.close.other': string;
-    'container.page.menu.close.all': string;
-};
+export declare type Values = Record<string, React_2.ReactNode | PrimitiveType | FormatXMLElementFn<React_2.ReactNode, React_2.ReactNode>>;
 
 export { }

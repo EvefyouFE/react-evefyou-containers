@@ -1,4 +1,4 @@
-export const zhCN_container = {
+export default {
     'container.page.menu.reload': '重新加载',
     'container.page.menu.close': '关闭标签页',
     'container.page.menu.close.left': '关闭左侧标签页',
