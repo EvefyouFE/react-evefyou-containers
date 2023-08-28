@@ -86,6 +86,14 @@ export default defineConfig({
         output: {
           minifyInternalExports: false,
           manualChunks: (id) => {
+            if (id.includes('_common') && id.includes('hooks/use')) {
+              console.log('hooks', id.split('/hooks/')[1].split('.ts')[0])
+              return 'hooks/'.concat(id.split('/hooks/')[1].split('.ts')[0])
+            }
+            if (id.includes('_common') && id.includes('utils/')) {
+              console.log('utils', id.split('/utils/')[1].split('.ts')[0])
+              return 'utils/'.concat(id.split('/utils/')[1].split('.ts')[0])
+            }
             let en = components.find(e => id.includes(e))
             en ??= locales.find(l => id.includes(l.split('_')[0]))
             console.log('manualChunks', en, id)
