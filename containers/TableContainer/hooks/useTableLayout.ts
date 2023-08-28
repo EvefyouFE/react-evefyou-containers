@@ -9,7 +9,7 @@
 import { useLayoutEffect, useMemo } from "react";
 import { useDebounceFn, useEventListener } from "ahooks";
 import { useMountEffect } from "react-evefyou-hooks";
-import { getViewportOffset } from "react-evefyou-components";
+import { getViewportOffset } from "react-evefyou-common";
 import { TableContainerProps } from "../props";
 import { UseTableLayoutHooksMethods, UseTableLayoutReturnType } from "../typing";
 

@@ -23,7 +23,6 @@ export * from './KeepAliveContainer/context'
 
 export * from './types/global'
 
-export * from './_common/hooks/useTabs'
 export * from './_common/config/tabContainerSetting'
 
 export * from './locale/locale'

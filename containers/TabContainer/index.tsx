@@ -19,7 +19,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { BasicIcon, uuid, useDesign } from 'react-evefyou-components';
+import { BasicIcon } from 'react-evefyou-components';
 import { FormattedMessage } from "react-intl";
 import { useLocation, useNavigate } from 'react-router';
 import { DndContextTabBar } from './components/DndContextTabBar';
@@ -29,7 +29,7 @@ import {
   BasicContainer,
   BasicContainerInstance,
 } from '../BasicContainer';
-import { useTabs } from '@common/hooks/useTabs';
+import { useTabs, uuid, useDesign } from 'react-evefyou-common';
 import { useTabItemsState } from './hooks/useTabItemsState';
 import { TabContainerProps } from "./props";
 import { CommonContainerProps } from "@/BasicContainer/props";

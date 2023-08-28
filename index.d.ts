@@ -6,7 +6,6 @@ import { Context } from 'react';
 import { FC } from 'react';
 import { JSX as JSX_2 } from 'react/jsx-runtime';
 import { JSXElementConstructor } from 'react';
-import { KeyItem } from 'react-evefyou-hooks';
 import { MemoExoticComponent } from 'react';
 import { MessageDescriptor } from 'react-intl';
 import { PrimitiveType } from 'react-intl';
@@ -108,12 +107,6 @@ export declare interface TabContainerSetting {
     indexPath: string;
 }
 
-export declare interface TabItem extends KeyItem<string> {
-    label: React_2.ReactNode;
-    children: React_2.ReactNode;
-    closeIcon: React_2.ReactNode;
-}
-
 export declare const TableContainer: <T = any>(p: TableContainerProps<T> & {
     ref?: React_2.Ref<TableContainerInstance<any>> | undefined;
 }) => ReactElement;
@@ -149,9 +142,5 @@ export declare interface UseTableLayoutMethods {
 }
 
 export declare type UseTableLayoutReturnType = UseTableLayoutMethods;
-
-export declare function useTabs(): {
-    getTabItem: (key: string, locale: string, title?: string, children?: React_2.ReactNode) => TabItem;
-};
 
 export { }

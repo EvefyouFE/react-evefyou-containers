@@ -23,7 +23,8 @@ import React, {
   useRef,
 } from 'react';
 import { deepCompareObj } from 'react-evefyou-hooks';
-import { BasicForm, BasicTable, useDesign } from 'react-evefyou-components';
+import { BasicForm, BasicTable } from 'react-evefyou-components';
+import { useDesign } from 'react-evefyou-common';
 import classNames from 'classnames';
 import { TableContainerInstance } from './typing';
 import {
