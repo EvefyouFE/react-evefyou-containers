@@ -29,7 +29,8 @@ import {
   BasicContainer,
   BasicContainerInstance,
 } from '../BasicContainer';
-import { useTabs, uuid, useDesign } from 'react-evefyou-common';
+import { uuid, useDesign } from 'react-evefyou-common';
+import { useTabs } from 'react-evefyou-components';
 import { useTabItemsState } from './hooks/useTabItemsState';
 import { TabContainerProps } from "./props";
 import { CommonContainerProps } from "@/BasicContainer/props";
