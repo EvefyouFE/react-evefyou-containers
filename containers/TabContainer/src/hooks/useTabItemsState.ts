@@ -7,9 +7,9 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import { defineActiveItemsState, defineUseState } from "react-evefyou-hooks";
-import { TabItem } from "../typing";
+import { AntdTabItem } from "../typing";
 
-const useActiveItemsState = defineActiveItemsState<TabItem>()
+const useActiveItemsState = defineActiveItemsState<AntdTabItem>()
 
 export const useTabItemsState = defineUseState({
   name: 'tabsItemsState',

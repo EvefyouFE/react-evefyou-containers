@@ -116,7 +116,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         modifyVars: {
-          hack: `true; @import (reference) "${path.resolve('containers/_common/styles/variables/index.less')}";`,
+          hack: `true; @import (reference) "${path.resolve('containers/styles/variables/index.less')}";`,
           'primary-color': '#0960bd',
           'text-color': '#c9d1d9',
           'text-color-base': '#000000d9',

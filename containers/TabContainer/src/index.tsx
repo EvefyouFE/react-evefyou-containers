@@ -28,14 +28,14 @@ import { TabBarExtraContent } from './components/TabBarExtraContent';
 import {
   BasicContainer,
   BasicContainerInstance,
-} from '../BasicContainer';
+  CommonContainerProps
+} from '@/BasicContainer';
 import { uuid, useDesign } from 'react-evefyou-common';
-import { useTabs } from 'react-evefyou-components';
+import { useTabs } from './hooks/useTabs';
 import { useTabItemsState } from './hooks/useTabItemsState';
 import { TabContainerProps } from "./props";
-import { CommonContainerProps } from "@/BasicContainer/props";
-import { DEFAULT_TAB_CONTAINER_SETTING } from "@common/config/tabContainerSetting";
-import { TabBarMoreItem } from "@/types/global";
+import { DEFAULT_TAB_CONTAINER_SETTING } from "./setting/tabContainerSetting";
+import { TabBarMoreItem } from "./typing";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export function translate2MenuItems(tabsMenuList?: TabBarMoreItem[]) {

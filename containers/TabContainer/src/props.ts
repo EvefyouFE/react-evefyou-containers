@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { TabBarMoreItem } from "@/types/global";
+import { TabBarMoreItem } from "./typing";
 
 export type TabContainerProps = PropsWithChildren & {
   indexPath?: string;
