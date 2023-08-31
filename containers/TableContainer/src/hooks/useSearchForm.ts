@@ -10,7 +10,7 @@ import classNames from "classnames";
 import { useCompInstance } from "react-evefyou-hooks";
 import { useMemo } from "react";
 import { BasicFormProps, BasicFormInstance } from "react-evefyou-components";
-import { useDesign } from "react-evefyou-common";
+import { useDesign } from "react-evefyou-hooks";
 import { TableContainerProps } from "../props";
 
 export function useSearchForm<T = any>(props: TableContainerProps<T>) {
