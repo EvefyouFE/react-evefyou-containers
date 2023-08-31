@@ -6,7 +6,8 @@ import { BasicFormInstance as BasicFormInstance_2 } from 'react-evefyou-componen
 import { BasicFormProps } from 'react-evefyou-components/BasicForm';
 import { BasicTableInstance } from 'react-evefyou-components/BasicForm';
 import { BasicTableInstance as BasicTableInstance_2 } from 'react-evefyou-components/BasicTable';
-import { BasicTableProps } from 'react-evefyou-components';
+import { BasicTableProps } from 'react-evefyou-components/BasicTable';
+import { BasicTableProps as BasicTableProps_2 } from 'react-evefyou-components';
 import { Context } from 'react';
 import type { DragEndEvent } from '@dnd-kit/core';
 import { FC } from 'react';
@@ -161,7 +162,7 @@ export declare function useSearchForm<T = any>(props: TableContainerProps<T>): U
 
 export declare const useTabItemsState: any;
 
-export declare function useTable<T = any>(props: TableContainerProps<T>): UseCompInstanceReturnType<BasicTableProps<T>, BasicTableInstance_2<T>>;
+export declare function useTable<T = any>(props: TableContainerProps<T>): UseCompInstanceReturnType<BasicTableProps_2<T>, BasicTableInstance_2<T>>;
 
 export declare function useTableContainerProps<T = any>(props: TableContainerProps<T>): UsePropsReturnType<TableContainerProps<T>>;
 

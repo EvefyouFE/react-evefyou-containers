@@ -7,7 +7,7 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import classNames from 'classnames';
-import { useDesign } from 'react-evefyou-hooks';
+import { useDesign } from 'react-evefyou-hooks/useDesign';
 import React, {
   forwardRef,
   useImperativeHandle,
