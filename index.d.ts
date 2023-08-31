@@ -1,9 +1,11 @@
 /// <reference types="react" />
 
 import { BaseInstance } from 'react-evefyou-hooks';
-import { BasicFormInstance } from 'react-evefyou-components';
-import { BasicFormProps } from 'react-evefyou-components';
-import { BasicTableInstance } from 'react-evefyou-components';
+import { BasicFormInstance } from 'react-evefyou-components/BasicTable';
+import { BasicFormInstance as BasicFormInstance_2 } from 'react-evefyou-components/BasicForm';
+import { BasicFormProps } from 'react-evefyou-components/BasicForm';
+import { BasicTableInstance } from 'react-evefyou-components/BasicForm';
+import { BasicTableInstance as BasicTableInstance_2 } from 'react-evefyou-components/BasicTable';
 import { BasicTableProps } from 'react-evefyou-components';
 import { Context } from 'react';
 import type { DragEndEvent } from '@dnd-kit/core';
@@ -155,11 +157,11 @@ export declare function translate2MenuItems(tabsMenuList?: TabBarMoreItem[]): {
 
 export declare const useBasicContainerContext: () => BasicContainerContextValue;
 
-export declare function useSearchForm<T = any>(props: TableContainerProps<T>): UseCompInstanceReturnType<BasicFormProps, BasicFormInstance<any>>;
+export declare function useSearchForm<T = any>(props: TableContainerProps<T>): UseCompInstanceReturnType<BasicFormProps, BasicFormInstance_2<any>>;
 
 export declare const useTabItemsState: any;
 
-export declare function useTable<T = any>(props: TableContainerProps<T>): UseCompInstanceReturnType<BasicTableProps<T>, BasicTableInstance<T>>;
+export declare function useTable<T = any>(props: TableContainerProps<T>): UseCompInstanceReturnType<BasicTableProps<T>, BasicTableInstance_2<T>>;
 
 export declare function useTableContainerProps<T = any>(props: TableContainerProps<T>): UsePropsReturnType<TableContainerProps<T>>;
 

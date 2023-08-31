@@ -19,7 +19,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { BasicIcon } from 'react-evefyou-components';
+import { BasicIcon } from 'react-evefyou-components/BasicIcon';
 import { FormattedMessage } from "react-intl";
 import { useLocation, useNavigate } from 'react-router';
 import { DndContextTabBar } from './components/DndContextTabBar';

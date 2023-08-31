@@ -7,7 +7,8 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import { BaseInstance } from "react-evefyou-hooks";
-import { BasicTableInstance, BasicFormInstance } from "react-evefyou-components";
+import { BasicTableInstance } from "react-evefyou-components/BasicForm";
+import { BasicFormInstance } from "react-evefyou-components/BasicTable";
 import { TableContainerProps } from "./props";
 
 export interface TableContainerInstance<T = any> extends BaseInstance<TableContainerProps<T>> {

@@ -7,7 +7,7 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import { useCompInstance } from "react-evefyou-hooks";
-import { BasicTableInstance } from "react-evefyou-components";
+import { BasicTableInstance } from "react-evefyou-components/BasicTable";
 import { TableContainerProps } from "../props";
 
 export function useTable<T = any>(props: TableContainerProps<T>) {

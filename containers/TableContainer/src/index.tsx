@@ -22,7 +22,8 @@ import React, {
   useMemo,
   useRef,
 } from 'react';
-import { BasicForm, BasicTable } from 'react-evefyou-components';
+import { BasicForm } from 'react-evefyou-components/BasicForm';
+import { BasicTable } from 'react-evefyou-components/BasicTable';
 import { deepCompareObj } from 'react-evefyou-common';
 import { useDesign } from 'react-evefyou-hooks';
 import classNames from 'classnames';

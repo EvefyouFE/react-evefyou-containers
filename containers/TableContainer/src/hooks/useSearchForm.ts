@@ -9,7 +9,7 @@
 import classNames from "classnames";
 import { useCompInstance } from "react-evefyou-hooks";
 import { useMemo } from "react";
-import { BasicFormProps, BasicFormInstance } from "react-evefyou-components";
+import { BasicFormProps, BasicFormInstance } from "react-evefyou-components/BasicForm";
 import { useDesign } from "react-evefyou-hooks";
 import { TableContainerProps } from "../props";
 
