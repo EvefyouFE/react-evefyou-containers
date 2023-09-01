@@ -1,54 +1,51 @@
 {
   "name": "react-evefyou-containers",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
   "module": "./es/index.js",
-  "types": "./index.d.ts",
+  "types": "./es/index.d.ts",
   "exports": {
     ".": {
       "import": "./es/index.js",
-      "require": "./cjs/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/index.js"
+    },
+    "./windicss": {
+      "import": "./css/windi.css",
+      "require": "./css/windi.css"
     },
     "./locale/zh_CN": {
       "import": "./es/locale/zh_CN/index.js",
       "require": "./cjs/locale/zh_CN/index.js",
-      "types": "./locale/zh_CN.d.ts"
+      "types": "./es/locale/zh_CN/index.d.ts"
     },
     "./locale/en_US": {
       "import": "./es/locale/en_US/index.js",
       "require": "./cjs/locale/en_US/index.js",
-      "types": "./locale/en_US.d.ts"
+      "types": "./es/locale/en_US/index.d.ts"
     },
     "./BasicContainer": {
       "import": "./es/BasicContainer/index.js",
-      "require": "./cjs/BasicContainer/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicContainer/index.js"
     },
     "./TabContainer": {
       "import": "./es/TabContainer/index.js",
-      "require": "./cjs/TabContainer/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/TabContainer/index.js"
     },
     "./TableContainer": {
       "import": "./es/TableContainer/index.js",
-      "require": "./cjs/TableContainer/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/TableContainer/index.js"
     },
     "./KeepAliveContainer": {
       "import": "./es/KeepAliveContainer/index.js",
-      "require": "./cjs/KeepAliveContainer/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/KeepAliveContainer/index.js"
     }
   },
   "files": [
     "cjs",
     "es",
-    "css",
-    "locale",
-    "index.d.ts"
+    "css"
   ],
   "scripts": {
     "dev": "vite",
@@ -95,10 +92,10 @@
     "react-router": ">=6.10.0",
     "react-router-dom": ">=6.10.0",
     "uuid": ">=9.0.0",
-    "react-evefyou-hooks": ">=1.0.21",
-    "react-evefyou-common": ">=1.0.9",
-    "react-evefyou-components": ">=1.0.37",
-    "react-evefyou-router": ">=1.0.13",
+    "react-evefyou-hooks": ">=1.0.23",
+    "react-evefyou-common": ">=1.0.12",
+    "react-evefyou-components": ">=1.0.38",
+    "react-evefyou-router": ">=1.0.15",
     "@iconify/react": ">=4.1.1",
     "moment": ">=2.29.4",
     "nprogress": ">=0.2.0"
