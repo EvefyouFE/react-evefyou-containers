@@ -30,9 +30,8 @@ import {
   BasicContainerInstance,
   CommonContainerProps
 } from '@/BasicContainer';
-import { useDesign } from 'react-evefyou-hooks';
-import { uuid } from 'react-evefyou-common';
-import { useTabs } from './hooks/useTabs';
+import { useDesign } from 'react-evefyou-hooks/useDesign';
+import { uuid } from 'react-evefyou-common/utils/generate/uuid';
 import { useTabItemsState } from './hooks/useTabItemsState';
 import { TabContainerProps } from "./props";
 import { DEFAULT_TAB_CONTAINER_SETTING } from "./setting/tabContainerSetting";
@@ -83,7 +82,6 @@ export const TabContainer: FC<TabContainerProps> = ({
   const newTabIndex = useRef(0);
   const location = useLocation();
   const [className, setClassName] = useState('');
-  const { getTabItem } = useTabs();
   const { prefixCls } = useDesign('tab-container');
   const containerRef = useRef<BasicContainerInstance>(null);
   const [, { toggleFullscreen }] = useFullscreen(getContainerElement);
@@ -132,14 +130,15 @@ export const TabContainer: FC<TabContainerProps> = ({
       location.pathname === '/' ? indexPath : location.pathname;
     const locale = 'menu'.concat(path.replaceAll('/', '.'));
     const pathItem = {
-      ...getTabItem(path, locale, '', wrapChildren),
+      key: path,
+      label: locale,
+      children: wrapChildren,
       forceRender: true,
     };
     addOrUpdateAndActive(pathItem);
   }, [
     location.pathname,
     indexPath,
-    getTabItem,
     wrapChildren,
     addOrUpdateAndActive,
   ]);

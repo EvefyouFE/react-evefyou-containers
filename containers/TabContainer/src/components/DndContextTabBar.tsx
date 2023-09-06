@@ -7,7 +7,7 @@ import {
 import { TabsProps } from 'antd';
 import { FC, useCallback } from 'react';
 import { DraggableTabNode } from './DraggableTabNode';
-import { AntdTabItem } from '../typing';
+import { AntdTabItem } from 'react-evefyou-components';
 
 type RenderTabBar = Required<TabsProps>['renderTabBar'];
 type RenderTabBarProps = Parameters<RenderTabBar>[0];

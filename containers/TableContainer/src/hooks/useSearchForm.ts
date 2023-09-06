@@ -7,10 +7,10 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import classNames from "classnames";
-import { useCompInstance } from "react-evefyou-hooks";
+import { useCompInstance } from "react-evefyou-hooks/useCompInstance";
 import { useMemo } from "react";
 import { BasicFormProps, BasicFormInstance } from "react-evefyou-components/BasicForm";
-import { useDesign } from 'react-evefyou-hooks';
+import { useDesign } from 'react-evefyou-hooks/useDesign';
 import { TableContainerProps } from "../props";
 
 export function useSearchForm<T = any>(props: TableContainerProps<T>) {

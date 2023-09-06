@@ -54,14 +54,14 @@ dependencies:
     specifier: '>=4.4.5'
     version: 4.4.5(react-dom@18.2.0)(react@18.2.0)
   react-evefyou-common:
-    specifier: '>=1.0.12'
-    version: 1.0.12(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
+    specifier: '>=1.0.17'
+    version: 1.0.17(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
   react-evefyou-components:
-    specifier: '>=1.0.38'
-    version: 1.0.38(@ant-design/icons@5.0.1)(@dnd-kit/core@6.0.8)(@dnd-kit/modifiers@6.0.1)(@dnd-kit/sortable@7.0.2)(@dnd-kit/utilities@3.2.1)(@iconify/react@4.1.1)(ahooks@3.7.6)(antd@5.6.3)(classnames@2.3.2)(moment@2.29.4)(nprogress@0.2.0)(ramda@0.29.0)(react-dom@18.2.0)(react-draggable@4.4.5)(react-evefyou-common@1.0.12)(react-evefyou-hooks@1.0.23)(react-evefyou-router@1.0.15)(react-intl@6.4.4)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0)(uuid@9.0.0)
+    specifier: '>=1.0.42'
+    version: 1.0.42(@ant-design/icons@5.0.1)(@dnd-kit/core@6.0.8)(@dnd-kit/modifiers@6.0.1)(@dnd-kit/sortable@7.0.2)(@dnd-kit/utilities@3.2.1)(@iconify/react@4.1.1)(ahooks@3.7.6)(antd@5.6.3)(classnames@2.3.2)(moment@2.29.4)(nprogress@0.2.0)(ramda@0.29.0)(react-dom@18.2.0)(react-draggable@4.4.5)(react-evefyou-common@1.0.17)(react-evefyou-hooks@1.0.27)(react-evefyou-router@1.0.15)(react-intl@6.4.4)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0)(uuid@9.0.0)
   react-evefyou-hooks:
-    specifier: '>=1.0.23'
-    version: 1.0.23(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.12)(react@18.2.0)(recoil@0.7.7)
+    specifier: '>=1.0.27'
+    version: 1.0.27(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.17)(react@18.2.0)(recoil@0.7.7)
   react-evefyou-router:
     specifier: '>=1.0.15'
     version: 1.0.15(ramda@0.29.0)(react-dom@18.2.0)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0)
@@ -3078,6 +3078,18 @@ packages:
     resolution: {integrity: sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==}
     dev: false
 
+  /js-evefyou-utils@1.0.1(moment@2.29.4)(ramda@0.29.0)(uuid@9.0.0):
+    resolution: {integrity: sha512-GZs9Com6GTkW3KC5Hz9E6QwaWCoyKwufA2isSxBQsIE4eQiaxdvwCIeTP6PXi4/6VBOAfpj3n/YdP3LgmXTRXw==}
+    peerDependencies:
+      moment: '>=2.29.4'
+      ramda: '>=0.29.0'
+      uuid: '>=9.0.0'
+    dependencies:
+      moment: 2.29.4
+      ramda: 0.29.0
+      uuid: 9.0.0
+    dev: false
+
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -4791,8 +4803,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /react-evefyou-common@1.0.12(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0):
-    resolution: {integrity: sha512-aNnZqaEKSOrOPTABfZ/0UmwHU11BQadGVubWBhAL1UHF0tgUMKaBuQkrgYSwHSRZzfiGGVQUsRG3x/AilIK9Yw==}
+  /react-evefyou-common@1.0.17(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0):
+    resolution: {integrity: sha512-hdJne33UhhXDl7kzykd5WNa4+jib91MeE22Ziv9ku8nMvq38ieeKR9o5P93Ofe2w5LoBR93At9nXSvr5lY2u5Q==}
     peerDependencies:
       moment: '>=2.29.4'
       ramda: '>=0.29.0'
@@ -4801,6 +4813,7 @@ packages:
       react-intl: '>=6.4.4'
       uuid: '>=9.0.0'
     dependencies:
+      js-evefyou-utils: 1.0.1(moment@2.29.4)(ramda@0.29.0)(uuid@9.0.0)
       moment: 2.29.4
       ramda: 0.29.0
       react: 18.2.0
@@ -4809,8 +4822,8 @@ packages:
       uuid: 9.0.0
     dev: false
 
-  /react-evefyou-components@1.0.38(@ant-design/icons@5.0.1)(@dnd-kit/core@6.0.8)(@dnd-kit/modifiers@6.0.1)(@dnd-kit/sortable@7.0.2)(@dnd-kit/utilities@3.2.1)(@iconify/react@4.1.1)(ahooks@3.7.6)(antd@5.6.3)(classnames@2.3.2)(moment@2.29.4)(nprogress@0.2.0)(ramda@0.29.0)(react-dom@18.2.0)(react-draggable@4.4.5)(react-evefyou-common@1.0.12)(react-evefyou-hooks@1.0.23)(react-evefyou-router@1.0.15)(react-intl@6.4.4)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0)(uuid@9.0.0):
-    resolution: {integrity: sha512-+xJrLRWFbulvdx78atmASAqLT0DyieV6uQlmoUdp/YDXlhbSK0RnucB4JWCDi3Lhg5laYQEGEQ0Xit4SkvWlaA==}
+  /react-evefyou-components@1.0.42(@ant-design/icons@5.0.1)(@dnd-kit/core@6.0.8)(@dnd-kit/modifiers@6.0.1)(@dnd-kit/sortable@7.0.2)(@dnd-kit/utilities@3.2.1)(@iconify/react@4.1.1)(ahooks@3.7.6)(antd@5.6.3)(classnames@2.3.2)(moment@2.29.4)(nprogress@0.2.0)(ramda@0.29.0)(react-dom@18.2.0)(react-draggable@4.4.5)(react-evefyou-common@1.0.17)(react-evefyou-hooks@1.0.27)(react-evefyou-router@1.0.15)(react-intl@6.4.4)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0)(uuid@9.0.0):
+    resolution: {integrity: sha512-fMqNdMLiPV5N5v7u+/XdG+doFxw4beif9RxReKOYZRoNU4z6JyRWbyFANWTgS7Ff2LACSuI8tPNnopwNSbK0Eg==}
     peerDependencies:
       '@ant-design/icons': '>=5.0.1'
       '@dnd-kit/core': '>=6.0.8'
@@ -4827,8 +4840,8 @@ packages:
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
       react-draggable: '>=4.4.5'
-      react-evefyou-common: '>=1.0.12'
-      react-evefyou-hooks: '>=1.0.23'
+      react-evefyou-common: '>=1.0.17'
+      react-evefyou-hooks: '>=1.0.27'
       react-evefyou-router: '>=1.0.15'
       react-intl: '>=6.4.4'
       react-router: '>=6.10.0'
@@ -4850,8 +4863,8 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-draggable: 4.4.5(react-dom@18.2.0)(react@18.2.0)
-      react-evefyou-common: 1.0.12(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
-      react-evefyou-hooks: 1.0.23(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.12)(react@18.2.0)(recoil@0.7.7)
+      react-evefyou-common: 1.0.17(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
+      react-evefyou-hooks: 1.0.27(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.17)(react@18.2.0)(recoil@0.7.7)
       react-evefyou-router: 1.0.15(ramda@0.29.0)(react-dom@18.2.0)(react-router-dom@6.10.0)(react-router@6.10.0)(react@18.2.0)
       react-intl: 6.4.4(react@18.2.0)(typescript@5.1.6)
       react-router: 6.10.0(react@18.2.0)
@@ -4859,21 +4872,21 @@ packages:
       uuid: 9.0.0
     dev: false
 
-  /react-evefyou-hooks@1.0.23(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.12)(react@18.2.0)(recoil@0.7.7):
-    resolution: {integrity: sha512-oq0gMDzbcU6NrihrJ2ZslZGnS01V37Cj72PA0aHLC0ZqmJjG4QTX3FK+6iI6RCLy2uc80OqqAS77Gd5NsJ60Nw==}
+  /react-evefyou-hooks@1.0.27(ahooks@3.7.6)(ramda@0.29.0)(react-dom@18.2.0)(react-evefyou-common@1.0.17)(react@18.2.0)(recoil@0.7.7):
+    resolution: {integrity: sha512-gTZgATgEphtQ36LMreeK74tpa5AFRoqE3TtAROrwjmaW4Tx/7V9RNPQqEIfNs6GqsbDYfcZ9NA6H/WradUG49A==}
     peerDependencies:
       ahooks: '>=3.7.6'
       ramda: '>=0.29.0'
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
-      react-evefyou-common: '>=1.0.12'
+      react-evefyou-common: '>=1.0.17'
       recoil: '>=0.7.7'
     dependencies:
       ahooks: 3.7.6(react@18.2.0)
       ramda: 0.29.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-evefyou-common: 1.0.12(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
+      react-evefyou-common: 1.0.17(moment@2.29.4)(ramda@0.29.0)(react-dom@18.2.0)(react-intl@6.4.4)(react@18.2.0)(uuid@9.0.0)
       recoil: 0.7.7(react-dom@18.2.0)(react@18.2.0)
     dev: false
 

@@ -8,8 +8,8 @@
  */
 import { useLayoutEffect, useMemo } from "react";
 import { useDebounceFn, useEventListener } from "ahooks";
-import { useMountEffect } from "react-evefyou-hooks";
-import { getViewportOffset } from "react-evefyou-common";
+import { useMountEffect } from "react-evefyou-hooks/useMountEffect";
+import { getViewportOffset } from "react-evefyou-common/utils/dom/getViewportOffset";
 import { TableContainerProps } from "../props";
 import { UseTableLayoutHooksMethods, UseTableLayoutReturnType } from "../typing";
 
