@@ -32,7 +32,7 @@ import {
 } from '@/BasicContainer';
 import { useDesign } from 'react-evefyou-hooks/useDesign';
 import { uuid } from 'react-evefyou-common/utils/generate/uuid';
-import { useTabItemsState } from './hooks/useTabItemsState';
+import { useTabContainerItemsState } from './hooks/useTabContainerItemsState';
 import { TabContainerProps } from "./props";
 import { DEFAULT_TAB_CONTAINER_SETTING } from "./setting/tabContainerSetting";
 import { TabBarMoreItem } from "./typing";
@@ -77,7 +77,7 @@ export const TabContainer: FC<TabContainerProps> = ({
       removeRight,
       getViewTabItems,
     },
-  ] = useTabItemsState();
+  ] = useTabContainerItemsState();
   const itemsState = getViewTabItems();
   const newTabIndex = useRef(0);
   const location = useLocation();

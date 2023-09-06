@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-containers",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
