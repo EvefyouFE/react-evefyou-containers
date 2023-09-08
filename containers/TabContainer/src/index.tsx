@@ -36,6 +36,7 @@ import { useTabContainerItemsState } from './hooks/useTabContainerItemsState';
 import { TabContainerProps } from "./props";
 import { DEFAULT_TAB_CONTAINER_SETTING } from "./setting/tabContainerSetting";
 import { TabBarMoreItem } from "./typing";
+import { formatBaseById } from "react-evefyou-common";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export function translate2MenuItems(tabsMenuList?: TabBarMoreItem[]) {
@@ -131,7 +132,7 @@ export const TabContainer: FC<TabContainerProps> = ({
     const locale = 'menu'.concat(path.replaceAll('/', '.'));
     const pathItem = {
       key: path,
-      label: locale,
+      label: formatBaseById(locale),
       children: wrapChildren,
       forceRender: true,
     };

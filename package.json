@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-containers",
-  "version": "1.0.32",
+  "version": "1.0.33",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -15,15 +15,15 @@
       "import": "./css/windi.css",
       "require": "./css/windi.css"
     },
-    "./locale/zh_CN": {
-      "import": "./es/locale/zh_CN/index.js",
-      "require": "./cjs/locale/zh_CN/index.js",
-      "types": "./es/locale/zh_CN/index.d.ts"
+    "./locales/zh_CN": {
+      "import": "./es/locales/zh_CN/index.js",
+      "require": "./cjs/locales/zh_CN/index.js",
+      "types": "./es/locales/zh_CN/index.d.ts"
     },
-    "./locale/en_US": {
-      "import": "./es/locale/en_US/index.js",
-      "require": "./cjs/locale/en_US/index.js",
-      "types": "./es/locale/en_US/index.d.ts"
+    "./locales/en_US": {
+      "import": "./es/locales/en_US/index.js",
+      "require": "./cjs/locales/en_US/index.js",
+      "types": "./es/locales/en_US/index.d.ts"
     },
     "./BasicContainer": {
       "import": "./es/BasicContainer/index.js",
@@ -92,9 +92,9 @@
     "react-router": ">=6.10.0",
     "react-router-dom": ">=6.10.0",
     "uuid": ">=9.0.0",
-    "react-evefyou-hooks": ">=1.0.27",
+    "react-evefyou-hooks": ">=1.0.28",
     "react-evefyou-common": ">=1.0.17",
-    "react-evefyou-components": ">=1.0.42",
+    "react-evefyou-components": ">=1.0.43",
     "react-evefyou-router": ">=1.0.15",
     "@iconify/react": ">=4.1.1",
     "moment": ">=2.29.4",
