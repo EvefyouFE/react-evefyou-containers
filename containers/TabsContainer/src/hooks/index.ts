@@ -1,1 +1,1 @@
-export * from './useTabContainerItemsState'
+export * from './useTabsContainerItemsState'

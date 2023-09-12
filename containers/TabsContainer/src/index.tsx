@@ -24,22 +24,22 @@ import { FormattedMessage } from "react-intl";
 import { useLocation, useNavigate } from 'react-router';
 import { DndContextTabBar } from './components/DndContextTabBar';
 import './TabsContainer.less';
-import { TabBarExtraContent } from './components/TabBarExtraContent';
+import { TabsBarExtraContent } from './components/TabsBarExtraContent';
 import {
   BasicContainerInstance,
 } from '@/BasicContainer';
 import { useDesign } from 'react-evefyou-hooks/useDesign';
 import { uuid } from 'react-evefyou-common/utils/generate/uuid';
-import { useTabContainerItemsState } from './hooks/useTabContainerItemsState';
-import { TabContainerProps } from "./props";
-import { DEFAULT_TAB_CONTAINER_SETTING } from "./setting/tabContainerSetting";
-import { TabBarMoreItem } from "./typing";
+import { useTabsContainerItemsState } from './hooks/useTabsContainerItemsState';
+import { TabsContainerProps } from "./props";
+import { DEFAULT_TABS_CONTAINER_SETTING } from "./setting/tabsContainerSetting";
+import { TabsBarMoreItem } from "./typing";
 import { formatBaseById } from "react-evefyou-common";
 import classNames from "classnames";
 import { TabsChildrenWrapper } from "./components/TabsChildrenWrappper";
 
 // eslint-disable-next-line react-refresh/only-export-components
-export function translate2MenuItems(tabsMenuList?: TabBarMoreItem[]) {
+export function translate2MenuItems(tabsMenuList?: TabsBarMoreItem[]) {
   return tabsMenuList?.map((m, index) => ({
     key: index,
     label: <FormattedMessage id={m.title} />,
@@ -49,10 +49,10 @@ export function translate2MenuItems(tabsMenuList?: TabBarMoreItem[]) {
 
 
 
-export const TabContainer: FC<TabContainerProps> = ({
+export const TabsContainer: FC<TabsContainerProps> = ({
   children,
-  indexPath = DEFAULT_TAB_CONTAINER_SETTING.indexPath,
-  tabBarMoreItems = DEFAULT_TAB_CONTAINER_SETTING.tabBarMoreItems,
+  indexPath = DEFAULT_TABS_CONTAINER_SETTING.indexPath,
+  tabBarMoreItems = DEFAULT_TABS_CONTAINER_SETTING.tabBarMoreItems,
   footer,
   tabBarHeight
 }) => {
@@ -69,7 +69,7 @@ export const TabContainer: FC<TabContainerProps> = ({
       removeRight,
       getViewTabItems,
     },
-  ] = useTabContainerItemsState();
+  ] = useTabsContainerItemsState();
   const itemsState = getViewTabItems();
   const newTabIndex = useRef(0);
   const location = useLocation();
@@ -176,7 +176,7 @@ export const TabContainer: FC<TabContainerProps> = ({
     onCloseRightTabs,
   };
   const tabBarExtraContent = (
-    <TabBarExtraContent {...tabBarExtraContentPropsValue} />
+    <TabsBarExtraContent {...tabBarExtraContentPropsValue} />
   );
 
   function onFullScreen() {

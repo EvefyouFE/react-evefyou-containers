@@ -1,9 +1,9 @@
 import { PropsWithChildren } from "react";
-import { TabBarMoreItem } from "./typing";
+import { TabsBarMoreItem } from "./typing";
 
-export type TabContainerProps = PropsWithChildren & {
+export type TabsContainerProps = PropsWithChildren & {
   indexPath?: string;
-  tabBarMoreItems?: TabBarMoreItem[];
+  tabBarMoreItems?: TabsBarMoreItem[];
   tabBarHeight?: string;
   footer?: React.ReactNode;
 }

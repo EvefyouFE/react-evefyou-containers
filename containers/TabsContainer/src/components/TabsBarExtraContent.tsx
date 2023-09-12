@@ -7,7 +7,7 @@ import {
 import { Dropdown, MenuProps } from 'antd';
 import { FC } from 'react';
 
-interface TabBarExtraContentProps {
+interface TabsBarExtraContentProps {
   items: MenuProps['items'];
   onFullScreen: () => void;
   onRefresh: () => void;
@@ -18,7 +18,7 @@ interface TabBarExtraContentProps {
   onCloseAllTabs: () => void;
 }
 
-export const TabBarExtraContent: FC<TabBarExtraContentProps> = ({
+export const TabsBarExtraContent: FC<TabsBarExtraContentProps> = ({
   items,
   onFullScreen,
   onRefresh,

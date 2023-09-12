@@ -1,9 +1,9 @@
 export type TargetKey = React.MouseEvent | React.KeyboardEvent | string;
-export interface TabBarMoreItem {
+export interface TabsBarMoreItem {
   title: string;
   icon: string;
 }
-export interface TabContainerSetting {
-  tabBarMoreItems: TabBarMoreItem[];
+export interface TabsContainerSetting {
+  tabBarMoreItems: TabsBarMoreItem[];
   indexPath: string;
 }

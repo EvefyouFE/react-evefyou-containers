@@ -12,8 +12,8 @@ import { AntdTabItem } from 'react-evefyou-components'
 
 const useActiveItemsState = defineActiveItemsState<AntdTabItem>()
 
-export const useTabContainerItemsState = defineUseState({
-  name: 'useTabContainerItemsState',
+export const useTabsContainerItemsState = defineUseState({
+  name: 'useTabsContainerItemsState',
   useState: () => useActiveItemsState(),
   getters: {
     getViewTabItems(state) {
