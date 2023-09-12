@@ -7,6 +7,6 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 export * from './BasicContainer'
-export * from './TabContainer'
+export * from './TabsContainer'
 export * from './TableContainer'
 export * from './KeepAliveContainer'

@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-containers",
-  "version": "1.0.33",
+  "version": "1.0.35",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -29,9 +29,9 @@
       "import": "./es/BasicContainer/index.js",
       "require": "./cjs/BasicContainer/index.js"
     },
-    "./TabContainer": {
-      "import": "./es/TabContainer/index.js",
-      "require": "./cjs/TabContainer/index.js"
+    "./TabsContainer": {
+      "import": "./es/TabsContainer/index.js",
+      "require": "./cjs/TabsContainer/index.js"
     },
     "./TableContainer": {
       "import": "./es/TableContainer/index.js",
@@ -94,7 +94,7 @@
     "uuid": ">=9.0.0",
     "react-evefyou-hooks": ">=1.0.28",
     "react-evefyou-common": ">=1.0.17",
-    "react-evefyou-components": ">=1.0.43",
+    "react-evefyou-components": ">=1.0.45",
     "react-evefyou-router": ">=1.0.15",
     "@iconify/react": ">=4.1.1",
     "moment": ">=2.29.4",

@@ -15,6 +15,7 @@ import {
 } from './components/KeepAliveComponent';
 import { KeepAliveContext } from "./context";
 import { KeepAliveProps, Children } from "./props";
+import { useDesign } from "react-evefyou-hooks/useDesign";
 
 export const KeepAliveContainer = memo(({
   children,
@@ -23,6 +24,7 @@ export const KeepAliveContainer = memo(({
   maxLen = 5,
   active = true,
 }: KeepAliveProps) => {
+  const { prefixCls } = useDesign('keep-alive-container')
   const containerRef = useRef<HTMLDivElement>(null);
   const components = useRef<Array<{ name: string; ele: Children }>>([]);
   const { pathname } = useLocation();
@@ -88,7 +90,7 @@ export const KeepAliveContainer = memo(({
   if (!active) return children;
   return (
     <>
-      <div ref={containerRef} className="keep-alive" />
+      <div ref={containerRef} className={prefixCls} />
       <KeepAliveContext.Provider value={context}>
         {map(
           ({ name, ele }) => (

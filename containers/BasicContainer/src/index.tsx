@@ -15,7 +15,7 @@ import React, {
   useRef,
 } from 'react';
 import './BasicContainer.less';
-import { CommonContainerProps } from "./props";
+import { BasicContainerProps } from "./props";
 
 export interface BasicContainerInstance {
   getElement: () => HTMLDivElement | null;
@@ -35,10 +35,10 @@ export const useBasicContainerContext = () =>
 
 export const BasicContainer = forwardRef<
   BasicContainerInstance,
-  CommonContainerProps
->(({ children, footer }, ref) => {
+  BasicContainerProps
+>(({ children, footer, className }, ref) => {
   const { prefixCls } = useDesign('basic-container');
-  const rootClsName = classNames(prefixCls, 'h-full bg-slate-100');
+  const rootClsName = classNames(prefixCls, className, 'h-full bg-slate-100');
   const containerRef = useRef<HTMLDivElement>(null);
   const value = useMemo(
     () => ({

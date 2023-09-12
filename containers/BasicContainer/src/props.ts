@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildrenCls } from "react-evefyou-common";
 
-export type CommonContainerProps = PropsWithChildren & {
+export type BasicContainerProps = PropsWithChildrenCls & {
   footer: React.ReactNode;
 }

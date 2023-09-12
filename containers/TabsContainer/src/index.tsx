@@ -23,12 +23,10 @@ import { BasicIcon } from 'react-evefyou-components/BasicIcon';
 import { FormattedMessage } from "react-intl";
 import { useLocation, useNavigate } from 'react-router';
 import { DndContextTabBar } from './components/DndContextTabBar';
-import './TabContainer.less';
+import './TabsContainer.less';
 import { TabBarExtraContent } from './components/TabBarExtraContent';
 import {
-  BasicContainer,
   BasicContainerInstance,
-  CommonContainerProps
 } from '@/BasicContainer';
 import { useDesign } from 'react-evefyou-hooks/useDesign';
 import { uuid } from 'react-evefyou-common/utils/generate/uuid';
@@ -37,6 +35,8 @@ import { TabContainerProps } from "./props";
 import { DEFAULT_TAB_CONTAINER_SETTING } from "./setting/tabContainerSetting";
 import { TabBarMoreItem } from "./typing";
 import { formatBaseById } from "react-evefyou-common";
+import classNames from "classnames";
+import { TabsChildrenWrapper } from "./components/TabsChildrenWrappper";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export function translate2MenuItems(tabsMenuList?: TabBarMoreItem[]) {
@@ -47,16 +47,7 @@ export function translate2MenuItems(tabsMenuList?: TabBarMoreItem[]) {
   }));
 }
 
-const ChildrenWrapper = React.forwardRef(
-  (
-    {
-      children,
-      footer
-    }: CommonContainerProps,
-    ref: React.ForwardedRef<BasicContainerInstance>,
-  ) => <BasicContainer ref={ref} footer={footer}>{children}</BasicContainer>,
-);
-ChildrenWrapper.displayName = 'ChildrenWrapper';
+
 
 export const TabContainer: FC<TabContainerProps> = ({
   children,
@@ -83,7 +74,7 @@ export const TabContainer: FC<TabContainerProps> = ({
   const newTabIndex = useRef(0);
   const location = useLocation();
   const [className, setClassName] = useState('');
-  const { prefixCls } = useDesign('tab-container');
+  const { prefixCls } = useDesign('tabs-container');
   const containerRef = useRef<BasicContainerInstance>(null);
   const [, { toggleFullscreen }] = useFullscreen(getContainerElement);
   const navigate = useNavigate();
@@ -119,9 +110,9 @@ export const TabContainer: FC<TabContainerProps> = ({
 
   const wrapChildren = useMemo(
     () => (
-      <ChildrenWrapper ref={containerRef} key={childrenKeyState} footer={footer}>
+      <TabsChildrenWrapper ref={containerRef} key={childrenKeyState} footer={footer}>
         {children}
-      </ChildrenWrapper>
+      </TabsChildrenWrapper>
     ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [childrenKeyState],
@@ -212,12 +203,13 @@ export const TabContainer: FC<TabContainerProps> = ({
   function getContainerElement() {
     return containerRef.current?.getElement();
   }
+  const clsName = classNames(prefixCls, className, 'h-full')
   return (
     <Tabs
       tabBarStyle={{
         height: tabBarHeight,
       }}
-      className={`${prefixCls} ${className} h-full`}
+      className={clsName}
       size="small"
       onChange={onChange}
       activeKey={activeKeyState as string}
