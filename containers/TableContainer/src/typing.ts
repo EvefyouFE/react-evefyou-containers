@@ -10,14 +10,15 @@ import { BaseInstance } from "react-evefyou-hooks";
 import { BasicFormInstance } from "react-evefyou-components/BasicForm";
 import { BasicTableInstance } from "react-evefyou-components/BasicTable";
 import { TableContainerProps } from "./props";
+import { Recordable } from "react-evefyou-common";
 
-export interface TableContainerInstance<T = any, FT = any> extends BaseInstance<TableContainerProps<T, FT>> {
+export interface TableContainerInstance<T extends Recordable = any, FT = any> extends BaseInstance<TableContainerProps<T, FT>> {
   formInstance: Partial<BasicFormInstance<FT>>;
   tableInstance: Partial<BasicTableInstance<T>>;
   getElement: () => HTMLDivElement | null;
 }
 
-export interface UseTableLayoutHooksMethods<T = any, FT = any> {
+export interface UseTableLayoutHooksMethods<T extends Recordable = any, FT = any> {
   instance: TableContainerInstance<T, FT>;
   tableInstance: Partial<BasicTableInstance<T>>;
 }

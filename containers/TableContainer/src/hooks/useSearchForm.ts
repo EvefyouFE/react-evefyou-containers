@@ -12,8 +12,9 @@ import { useMemo } from "react";
 import { BasicFormProps, BasicFormInstance } from "react-evefyou-components/BasicForm";
 import { useDesign } from 'react-evefyou-hooks/useDesign';
 import { TableContainerProps } from "../props";
+import { Recordable } from "react-evefyou-common";
 
-export function useSearchForm<T = any>(props: TableContainerProps<T>) {
+export function useSearchForm<T extends Recordable = any, FT = any>(props: TableContainerProps<T, FT>) {
     const { searchProps } = props
     const { prefixCls } = useDesign('basic-table-container-search-form')
     const searchPropsValue = useMemo(() => {
@@ -33,8 +34,8 @@ export function useSearchForm<T = any>(props: TableContainerProps<T>) {
             showAction: true,
             className,
             ...searchProps,
-        } as BasicFormProps : undefined
+        } as BasicFormProps<FT> : undefined
     }, [searchProps, prefixCls])
 
-    return useCompInstance<BasicFormInstance<any>>(searchPropsValue)
+    return useCompInstance<BasicFormInstance<FT>>(searchPropsValue)
 }

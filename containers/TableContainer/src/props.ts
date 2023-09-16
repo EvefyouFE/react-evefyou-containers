@@ -8,7 +8,8 @@
  */
 import { BasicTableProps } from "react-evefyou-components/BasicTable";
 import { BasicFormProps } from "react-evefyou-components/BasicForm";
+import { Recordable } from "react-evefyou-common";
 
-export interface TableContainerProps<T = any, FT = any> extends BasicTableProps<T> {
+export interface TableContainerProps<T extends Recordable = any, FT = any> extends BasicTableProps<T> {
   searchProps?: BasicFormProps<FT>;
 }

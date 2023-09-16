@@ -12,10 +12,11 @@ import { useMountEffect } from "react-evefyou-hooks/useMountEffect";
 import { getViewportOffset } from "react-evefyou-common/utils/dom/getViewportOffset";
 import { TableContainerProps } from "../props";
 import { UseTableLayoutHooksMethods, UseTableLayoutReturnType } from "../typing";
+import { Recordable } from "react-evefyou-common";
 
-export function useTableLayout(
-    props: TableContainerProps,
-    methods: UseTableLayoutHooksMethods
+export function useTableLayout<T extends Recordable = any, FT = any>(
+    props: TableContainerProps<T, FT>,
+    methods: UseTableLayoutHooksMethods<T, FT>
 ): UseTableLayoutReturnType {
     const {
         canResize = true,

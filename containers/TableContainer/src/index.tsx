@@ -15,29 +15,29 @@ import React, {
   useRef,
 } from 'react';
 import { BasicForm } from 'react-evefyou-components/BasicForm';
-import { BasicTable } from 'react-evefyou-components/BasicTable';
+import { BasicTable, useTableInstance } from 'react-evefyou-components/BasicTable';
 import { deepCompareObj } from 'react-evefyou-common/utils/object/deepCompareObj';
 import { useDesign } from 'react-evefyou-hooks/useDesign';
 import classNames from 'classnames';
 import { TableContainerInstance } from './typing';
 import {
   useSearchForm,
-  useTable,
   useTableContainerProps,
   useTableLayout,
 } from './hooks';
 import { TableContainerProps } from './props';
+import { Recordable } from "react-evefyou-common";
 
 export const TableContainer = React.memo(
   React.forwardRef(
-    <T = any, FT = any>(
+    <T extends Recordable = any, FT = any>(
       props: TableContainerProps<T, FT>,
       ref: React.ForwardedRef<TableContainerInstance<T, FT>>,
     ) => {
       const tableContainerRef = useRef<HTMLDivElement>(null);
       const [propsState, propsMethods] = useTableContainerProps<T>(props);
       const [formInstanceRef, formInstance] = useSearchForm(propsState);
-      const [tableInstanceRef, tableInstance] = useTable<T>(propsState);
+      const [tableInstanceRef, tableInstance] = useTableInstance<T>(propsState);
 
       const instance: TableContainerInstance<T, FT> = useMemo(
         () => ({
@@ -66,6 +66,6 @@ export const TableContainer = React.memo(
     }
   ),
   deepCompareObj
-) as <T = any, FT = any>(
+) as <T extends Recordable = any, FT = any>(
   p: TableContainerProps<T, FT> & { ref?: Ref<TableContainerInstance<T, FT>> },
 ) => ReactElement;
