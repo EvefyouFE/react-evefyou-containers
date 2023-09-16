@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-containers",
-  "version": "1.0.40",
+  "version": "1.0.41",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -92,9 +92,9 @@
     "react-router": ">=6.10.0",
     "react-router-dom": ">=6.10.0",
     "uuid": ">=9.0.0",
-    "react-evefyou-common": ">=1.0.18",
-    "react-evefyou-hooks": ">=1.0.29",
-    "react-evefyou-components": ">=1.0.49",
+    "react-evefyou-common": ">=1.0.19",
+    "react-evefyou-hooks": ">=1.0.30",
+    "react-evefyou-components": ">=1.0.50",
     "@iconify/react": ">=4.1.1",
     "moment": ">=2.29.4",
     "nprogress": ">=0.2.0"
