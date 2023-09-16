@@ -11,15 +11,15 @@ import { BasicFormInstance } from "react-evefyou-components/BasicForm";
 import { BasicTableInstance } from "react-evefyou-components/BasicTable";
 import { TableContainerProps } from "./props";
 
-export interface TableContainerInstance<T = any> extends BaseInstance<TableContainerProps<T>> {
-  formInstance: Partial<BasicFormInstance<any>>;
-  tableInstance: Partial<BasicTableInstance<any>>;
+export interface TableContainerInstance<T = any, FT = any> extends BaseInstance<TableContainerProps<T, FT>> {
+  formInstance: Partial<BasicFormInstance<FT>>;
+  tableInstance: Partial<BasicTableInstance<T>>;
   getElement: () => HTMLDivElement | null;
 }
 
-export interface UseTableLayoutHooksMethods {
-  instance: TableContainerInstance;
-  tableInstance: Partial<BasicTableInstance>;
+export interface UseTableLayoutHooksMethods<T = any, FT = any> {
+  instance: TableContainerInstance<T, FT>;
+  tableInstance: Partial<BasicTableInstance<T>>;
 }
 export interface UseTableLayoutMethods {
   resetTableHeight: () => void;

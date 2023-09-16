@@ -1,13 +1,5 @@
 /*
  * @Author: EvefyouFE
- * @Date: 2023-08-21 22:40:46
- * @FilePath: \react-evefyou-containers\components\TableContainer\index.tsx
- * @Description: 
- * Everyone is coming to the world i live in, as i am going to the world lives for you. 人人皆往我世界，我为世界中人人。
- * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
- */
-/*
- * @Author: EvefyouFE
  * @Date: 2023-07-15 00:49:31
  * @FilePath: \react-evefyou-containers\components\TableContainer\index.tsx
  * @Description: 
@@ -38,16 +30,16 @@ import { TableContainerProps } from './props';
 
 export const TableContainer = React.memo(
   React.forwardRef(
-    <T = any>(
-      props: TableContainerProps<T>,
-      ref: React.ForwardedRef<TableContainerInstance<T>>,
+    <T = any, FT = any>(
+      props: TableContainerProps<T, FT>,
+      ref: React.ForwardedRef<TableContainerInstance<T, FT>>,
     ) => {
       const tableContainerRef = useRef<HTMLDivElement>(null);
       const [propsState, propsMethods] = useTableContainerProps<T>(props);
       const [formInstanceRef, formInstance] = useSearchForm(propsState);
       const [tableInstanceRef, tableInstance] = useTable<T>(propsState);
 
-      const instance: TableContainerInstance = useMemo(
+      const instance: TableContainerInstance<T, FT> = useMemo(
         () => ({
           init: propsMethods.init,
           getElement: () => tableContainerRef.current,
@@ -67,13 +59,13 @@ export const TableContainer = React.memo(
       const rootClsName = classNames(prefixCls, 'p-4');
       return (
         <div className={rootClsName} ref={tableContainerRef}>
-          <BasicForm ref={formInstanceRef} />
+          <BasicForm<FT> ref={formInstanceRef} />
           <BasicTable<T> ref={tableInstanceRef} />
         </div>
-      );
-    },
+      )
+    }
   ),
-  deepCompareObj,
-) as <T = any>(
-  p: TableContainerProps<T> & { ref?: Ref<TableContainerInstance> },
+  deepCompareObj
+) as <T = any, FT = any>(
+  p: TableContainerProps<T, FT> & { ref?: Ref<TableContainerInstance<T, FT>> },
 ) => ReactElement;

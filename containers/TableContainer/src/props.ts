@@ -7,5 +7,8 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import { BasicTableProps } from "react-evefyou-components/BasicTable";
+import { BasicFormProps } from "react-evefyou-components/BasicForm";
 
-export type TableContainerProps<T = any> = BasicTableProps<T>;
+export interface TableContainerProps<T = any, FT = any> extends BasicTableProps<T> {
+  searchProps?: BasicFormProps<FT>;
+}
